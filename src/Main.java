@@ -6,24 +6,25 @@ public class Main {
         Truck[] trucks = {new Truck("truck1", 6), new Truck("truck2", 8)};
 
         Bicycle[] bicycles = {new Bicycle("bicycle1", 2), new Bicycle("bicycle2", 2)};
-        TransportVehicle[] transportVehicles = new TransportVehicle[cars.length + trucks.length + bicycles.length];
+        Transport[] transports = new WheeledTransport[cars.length + trucks.length + bicycles.length];
 
         for (int i = 0; i < cars.length; i++) {
-            transportVehicles[i] = cars[i];
+            transports[i] = cars[i];
 
         }
         for (int i = 0; i < trucks.length; i++) {
-            transportVehicles[i + cars.length] = trucks[i];
+            transports[i + cars.length] = trucks[i];
 
         }
         for (int i = 0; i < bicycles.length; i++) {
-            transportVehicles[i + cars.length + trucks.length] = bicycles[i];
+            transports[i + cars.length + trucks.length] = bicycles[i];
 
         }
 
 
-        for (int i = 0; i < transportVehicles.length; i++) {
-            transportVehicles[i].service();
+        for (int i = 0; i < transports.length; i++) {
+           ServiceStation serviceStation=new ServiceStation();
+           serviceStation.check(transports[i]);
         }
 
 

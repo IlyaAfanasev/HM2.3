@@ -1,7 +1,5 @@
-public interface ServiceStation {
-
-
-    void service();
-
-
+public class ServiceStation {
+    void check(Transport transport) {
+        transport.service();
+    }
 }
