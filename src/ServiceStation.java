@@ -1,5 +1,5 @@
 public class ServiceStation {
-    void check(Transport transport) {
+    public void check(Transport transport) {
         transport.service();
     }
 }
